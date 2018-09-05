@@ -15,6 +15,11 @@ const arr = [
     container: true,
     key: "alignItems",
     value: ["flex-start", "flex-end", "baseline", "center", "stretch"]
+  },
+  {
+    container: true,
+    key: "justifyContent",
+    value: ["flex-start", "flex-end", "space-between", "center", "space-around"]
   }
 ];
 
@@ -45,6 +50,7 @@ class App extends React.Component {
         }
       });
     }
+    console.log(this.state);
   };
 
   render() {

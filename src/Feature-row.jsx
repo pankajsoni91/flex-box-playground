@@ -10,12 +10,12 @@ class FeatureRow extends React.Component {
             type="radio"
             value={item}
             name={style}
-            id={item}
+            id={`${style}_${item}`}
             onChange={e => {
               this.props.onSelect(e.target.value);
             }}
           />
-          <label for={item}>{item}</label>
+          <label for={`${style}_${item}`}>{item}</label>
         </div>
       );
     });
