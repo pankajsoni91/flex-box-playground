@@ -58,15 +58,24 @@ class App extends React.Component {
     return (
       <div className="app">
         <FlexItem containerStyle={containerStyle} itemStyle={itemStyle} />
-        {arr.map(item => {
-          return (
-            <FeatureRow
-              style={item.key}
-              value={item.value}
-              onSelect={this.updateStyle(item.container, item.key)}
-            />
-          );
-        })}
+        <div
+          style={{
+            display: "flex",
+            "flex-direction": "row",
+            "align-items": "stretch",
+            "justify-content": "space-between"
+          }}
+        >
+          {arr.map(item => {
+            return (
+              <FeatureRow
+                style={item.key}
+                value={item.value}
+                onSelect={this.updateStyle(item.container, item.key)}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }

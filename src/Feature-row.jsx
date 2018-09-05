@@ -20,7 +20,7 @@ class FeatureRow extends React.Component {
       );
     });
     return (
-      <div>
+      <div style={{ width: "20%" }}>
         <h4>{style}</h4>
         {radio}
       </div>
