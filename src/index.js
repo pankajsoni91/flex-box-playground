@@ -57,6 +57,7 @@ class App extends React.Component {
     const { containerStyle, itemStyle } = this.state;
     return (
       <div className="app">
+      Hello
         <FlexItem containerStyle={containerStyle} itemStyle={itemStyle} />
         <div
           style={{
