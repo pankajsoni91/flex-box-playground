@@ -27,7 +27,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      containerStyle: null,
+      containerStyle: {
+        display: "flex"
+      },
       itemStyle: null
     };
   }
@@ -63,7 +65,8 @@ class App extends React.Component {
             display: "flex",
             "flex-direction": "row",
             "align-items": "stretch",
-            "justify-content": "space-between"
+            "justify-content": "space-between",
+            "text-align": "left"
           }}
         >
           {arr.map(item => {
