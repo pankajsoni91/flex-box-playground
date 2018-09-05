@@ -1,0 +1,42 @@
+.app {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.flexContainer {
+  border: 1px solid #666;
+  display: flex;
+  margin-bottom: 2rem;
+  width: 100%;
+  padding: 2rem;
+}
+
+.item-1,
+.item-2,
+.item-3,
+.item-4,
+.item-5 {
+  width: 5rem;
+  height: 5rem;
+  padding: 1rem;
+}
+
+.item-1 {
+  background-color: #2a80b9;
+}
+
+.item-3 {
+  background-color: #8f44ad;
+}
+
+.item-2 {
+  background-color: #16a086;
+}
+
+.item-4 {
+  background-color: #f1c40f;
+}
+
+.item-5 {
+  background-color: #e77e23;
+}
