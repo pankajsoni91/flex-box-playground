@@ -6,7 +6,7 @@
 .flexContainer {
   border: 1px solid #666;
   margin-bottom: 2rem;
-  height: 20rem;
+  height: 15rem;
 }
 
 .item-1,
@@ -14,7 +14,7 @@
 .item-3,
 .item-4,
 .item-5 {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .item-1 {
@@ -45,11 +45,12 @@
 
 .numberBox {
   width: 3rem;
+  border: 1px solid black;
 }
 
 .propertyName {
   display: flex;
-  flex-basis: 21%;
+  flex-basis: 300px;
   text-align: left;
 }
 

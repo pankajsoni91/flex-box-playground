@@ -53,7 +53,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      containerStyle: null,
+      containerStyle: {
+        display: "flex"
+      },
       itemStyle: null,
       itemValueStyle: null
     };
@@ -99,7 +101,7 @@ class App extends React.Component {
         <div className="radioWrapper">
           {arr.map(item => {
             return (
-              <div className="propertyName">
+              <div className="propertyName" key={item.key}>
                 {item.container === "inputVal" ? (
                   <FeatureInput
                     style={item.key}

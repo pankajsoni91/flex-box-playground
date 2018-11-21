@@ -5,7 +5,7 @@ class FeatureRow extends React.Component {
     const style = this.props.style;
     const radio = this.props.value.map(item => {
       return (
-        <div className="item">
+        <div className="item" key={item}>
           <input
             type="radio"
             value={item}
@@ -15,12 +15,12 @@ class FeatureRow extends React.Component {
               this.props.onSelect(e.target.value);
             }}
           />
-          <label for={`${style}_${item}`}>{item}</label>
+          <label htmlFor={`${style}_${item}`}>{item}</label>
         </div>
       );
     });
     return (
-      <div style={{ width: "20%" }}>
+      <div>
         <h4>{style}</h4>
         <div>{radio}</div>
       </div>

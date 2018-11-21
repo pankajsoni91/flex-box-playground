@@ -5,7 +5,9 @@ class FeatureInput extends React.Component {
     const { style, onSelect, element } = this.props;
     const numberBox = element.map(item => {
       return (
-        <div>
+        <div key={item}>
+          <label htmlFor={`${style}_${item}`}>{item}</label>
+          <br />
           <input
             type="number"
             min="0"
@@ -15,7 +17,6 @@ class FeatureInput extends React.Component {
               onSelect(e.target.value);
             }}
           />
-          <label for={`${style}_${item}`}>{item}</label>
         </div>
       );
     });
