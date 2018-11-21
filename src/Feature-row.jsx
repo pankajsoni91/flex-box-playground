@@ -5,7 +5,7 @@ class FeatureRow extends React.Component {
     const style = this.props.style;
     const radio = this.props.value.map(item => {
       return (
-        <div>
+        <div className="item">
           <input
             type="radio"
             value={item}
@@ -22,7 +22,7 @@ class FeatureRow extends React.Component {
     return (
       <div style={{ width: "20%" }}>
         <h4>{style}</h4>
-        {radio}
+        <div>{radio}</div>
       </div>
     );
   }
