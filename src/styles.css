@@ -7,8 +7,7 @@
   border: 1px solid #666;
   display: flex;
   margin-bottom: 2rem;
-  width: 100%;
-  padding: 2rem;
+  height: 20rem;
 }
 
 .item-1,
@@ -16,8 +15,6 @@
 .item-3,
 .item-4,
 .item-5 {
-  width: 5rem;
-  height: 3rem;
   padding: 1rem;
 }
 
@@ -26,7 +23,6 @@
 }
 
 .item-3 {
-  height: 6rem;
   background-color: #8f44ad;
 }
 
@@ -40,4 +36,24 @@
 
 .item-5 {
   background-color: #e77e23;
+}
+
+.radioWrapper {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.numberBox {
+  width: 3rem;
+}
+
+.propertyName {
+  display: flex;
+  flex-basis: 21%;
+  text-align: left;
+}
+
+.item {
+  margin-bottom: 0.4rem;
 }

@@ -2,13 +2,14 @@ import React from "react";
 import ReactDOM from "react-dom";
 import FlexItem from "./Flex-item.jsx";
 import FeatureRow from "./Feature-row.jsx";
+import FeatureInput from "./Flex-input.jsx";
 
 import "./styles.css";
 
 const arr = [
   {
     container: true,
-    key: "flex-direction",
+    key: "flexDirection",
     value: ["row", "row-reverse", "column", "column-reverse"]
   },
   {
@@ -20,6 +21,31 @@ const arr = [
     container: true,
     key: "justifyContent",
     value: ["flex-start", "flex-end", "space-between", "center", "space-around"]
+  },
+  {
+    container: true,
+    key: "flexWrap",
+    value: ["nowrap", "wrap", "wrap-reverse"]
+  },
+  {
+    container: false,
+    key: "alignSelf",
+    value: ["auto", "flex-start", "flex-end", "baseline", "center", "stretch"]
+  },
+  {
+    container: "inputVal",
+    key: "flexGrow",
+    value: ["item-1"]
+  },
+  {
+    container: "inputVal",
+    key: "flexShrink",
+    value: ["item-1"]
+  },
+  {
+    container: "inputVal",
+    key: "order",
+    value: ["item-1"]
   }
 ];
 
@@ -28,16 +54,25 @@ class App extends React.Component {
     super(props);
     this.state = {
       containerStyle: null,
-      itemStyle: null
+      itemStyle: null,
+      itemValueStyle: null
     };
   }
 
   updateStyle = (container, key) => data => {
-    if (container) {
+    if (container === true) {
       this.setState({
         ...this.state,
         containerStyle: {
           ...this.state.containerStyle,
+          [key]: data
+        }
+      });
+    } else if (container === "inputVal") {
+      this.setState({
+        ...this.state,
+        itemValueStyle: {
+          ...this.state.itemValueStyle,
           [key]: data
         }
       });
@@ -50,23 +85,38 @@ class App extends React.Component {
         }
       });
     }
-    console.log(this.state);
   };
 
   render() {
-    const { containerStyle, itemStyle } = this.state;
+    const { containerStyle, itemStyle, itemValueStyle } = this.state;
     return (
       <div className="app">
-        <FlexItem containerStyle={containerStyle} itemStyle={itemStyle} />
-        {arr.map(item => {
-          return (
-            <FeatureRow
-              style={item.key}
-              value={item.value}
-              onSelect={this.updateStyle(item.container, item.key)}
-            />
-          );
-        })}
+        <FlexItem
+          containerStyle={containerStyle}
+          itemStyle={itemStyle}
+          itemValueStyle={itemValueStyle}
+        />
+        <div className="radioWrapper">
+          {arr.map(item => {
+            return (
+              <div className="propertyName">
+                {item.container === "inputVal" ? (
+                  <FeatureInput
+                    style={item.key}
+                    element={item.value}
+                    onSelect={this.updateStyle(item.container, item.key)}
+                  />
+                ) : (
+                  <FeatureRow
+                    style={item.key}
+                    value={item.value}
+                    onSelect={this.updateStyle(item.container, item.key)}
+                  />
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
