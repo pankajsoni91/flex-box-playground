@@ -50,8 +50,8 @@
 
 .propertyName {
   display: flex;
-  flex-basis: 300px;
   text-align: left;
+  margin: 1rem;
 }
 
 .item {

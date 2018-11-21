@@ -35,17 +35,17 @@ const arr = [
   {
     container: "inputVal",
     key: "flexGrow",
-    value: ["item-1"]
+    value: ["For Item 1"]
   },
   {
     container: "inputVal",
     key: "flexShrink",
-    value: ["item-1"]
+    value: ["For Item 1"]
   },
   {
     container: "inputVal",
     key: "order",
-    value: ["item-1"]
+    value: ["For Item 1"]
   }
 ];
 
